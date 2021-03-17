@@ -1,4 +1,4 @@
-# Chemical Speciation and Reaction Mechanisms Identification
+# CheSRMI: Chemical Speciation and Reaction Mechanisms Identification
 
 The workflow of codes in this repository allow for the identification of species and reaction mechanisms (*open* and *closed* reactions) given an input trajectory as explained in Ref. [1]
 
