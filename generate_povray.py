@@ -28,8 +28,8 @@ print ('bondpairs = ', bondpairs)
 #rotation = '19.35877701587121x, -73.10096685014302y, -6.5356238946233525z' # found using ASE-GUI menu 'view -> rotate'
 
 # For  7494.xyz, 7710.xyz, 7758.xyz, 7770.xyz : 
-rotation = '-127.79182621445199x, 77.43112047601284y, -138.1905507771526z' # found using ASE-GUI menu 'view -> rotate'
-
+# rotation = '-32.40911797787377x, 41.26604461827356y, -5.1966591311963155z' # found using ASE-GUI menu 'view -> rotate'
+rotation = '-34.78470301152955x, 25.21445142628499y, -7.340544491045894z'
 
 # Common kwargs for eps, png, pov
 kwargs = {
