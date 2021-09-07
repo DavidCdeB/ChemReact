@@ -85,6 +85,10 @@ dict_colors = {
 }
 ```
 
+## 4 Detecting reactions 
+
+
+
 *In progress:* detailed documentation for user-friendly use.
 
 
