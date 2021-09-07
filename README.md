@@ -45,6 +45,9 @@ It gives a better picture to divide the trajectory in chunks of 500 fs, and make
 
 ![runn_avg](https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png&s=200)
 
+<img src="https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png" width="50%" height="50%">
+
+replace ![image](https://your-image-url.type) with <img src="https://your-image-url.type" width="50%" height="50%">
 
 *In progress:* detailed documentation for user-friendly use.
 
