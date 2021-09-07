@@ -43,11 +43,47 @@ b) Also this part of the code ensures no Al-Al or Cl-Cl bonds are formed (you ma
 Plotting the _type_ and _number_ of molecules found at each fs time step is very confusing. 
 It gives a better picture to divide the trajectory in chunks of 500 fs, and make this division every 1 fs, in other words, "moving chunks" of 500 fs:
 
-![runn_avg](https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png&s=200)
+<!--- ![runn_avg](https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png&s=200)
+--> 
 
-<img src="https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png" width="20%" height="20%">
 
-replace ![image](https://your-image-url.type) with <img src="https://your-image-url.type" width="50%" height="50%">
+<!---  replace ![image](https://your-image-url.type) with <img src="https://your-image-url.type" width="50%" height="50%">
+-->
+
+The script `scatter_and_run_average_4.py` uses all the aforementioned `{molecule_formula}.count.txt` files and plots the running average concentration of each molecule, something like this:
+
+[composition_and_running_av_E_6.small.pdf](https://github.com/DavidCdeB/ChemReact/files/7123357/composition_and_running_av_E_6.small.pdf)
+
+<!---![p2](https://user-images.githubusercontent.com/18029016/132387621-cc9fc624-457b-476d-af15-968e95d945e7.png)
+-->
+
+<img src="https://user-images.githubusercontent.com/18029016/132387621-cc9fc624-457b-476d-af15-968e95d945e7.png" width="70%" height="70%">
+
+### 3.1 System specific warning: 
+
+Make sure you adapt the numeric-formula-to-chemical-formula conversion:
+
+```
+dict_labels = {                                                                                        
+        'C2H8AlCl2N4O2'       : '$[$AlCl$_{2}$(ur)$_{2}]^{+}$',
+        'Al2Cl7'              : '$[$Al$_{2}$Cl$_{7}]^{-}$',
+        'AlCl4'               : '$[$AlCl$_{4}]^{-}$',
+        'C2H8Al2Cl5N4O2'      : '$[$Al$_{2}$Cl$_{5}$(ur)$_{2}]^{+}$',
+ ...
+        'CH4AlCl3N2O'         : '$[$AlCl$_{3}$(ur)$]$',
+}
+```
+```
+dict_colors = {                                                                                        
+        'C2H8AlCl2N4O2'       :  'green',
+        'Al2Cl7'              :  'red',
+        'AlCl4'               :  'blue',
+        'C2H8Al2Cl5N4O2'      :  'orange',
+ ...
+        'C2H8Al5Cl15N4O2'     :  'crimson',
+}
+```
 
 *In progress:* detailed documentation for user-friendly use.
 
