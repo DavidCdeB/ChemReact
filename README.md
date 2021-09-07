@@ -4,4 +4,4 @@ The workflow of codes in this repository allow for the identification of species
 
 *In progress:* detailed documentation for user-friendly use.
 
-[1] Carrasco-Busturia, David et al., *Ab initio* molecular dynamics investigations of the chemical speciation and reactivity of deep eutectic electrolytes in aluminum batteries, ChemSusChem (2021)
+[1] Carrasco-Busturia, David et al., *Ab initio* molecular dynamics investigations of the chemical speciation and reactivity of deep eutectic electrolytes in aluminum batteries,  ChemSusChem 2021, 14, *2034*
