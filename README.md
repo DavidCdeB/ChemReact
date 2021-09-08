@@ -110,6 +110,14 @@ again.
 It is also possible to access the information on how much time two atoms remain bonded until they break or vicecersa. In other words, we can access the information about the kietics of the reactions and the lifetime of the intermediate (or product) species.
 
 
+## Postporcessing
+
+It is also possible to exploit the scripts `parsing_closed_clean.py` and `parsing_open_clean.py` (`detect_molecules_6_PII.py` calls them by default) to plot nice \*tex tables summarizing the reactions, like the following:
+
+<img src="https://user-images.githubusercontent.com/18029016/132542241-11b62430-0360-413e-9acd-7425551922ee.png" width="60%" height="60%">
+
+<img src="https://user-images.githubusercontent.com/18029016/132542251-8aae0d22-59dd-4579-b300-310ad8f0c0ef.png" width="50%" height="50%">
+
 
 *In progress:* detailed documentation for user-friendly use.
 
