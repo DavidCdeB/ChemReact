@@ -48,23 +48,9 @@ b) Also this part of the code ensures no Al-Al or Cl-Cl bonds are formed (you ma
 Plotting the _type_ and _number_ of molecules found at each fs time step is very confusing. 
 It gives a better picture to divide the trajectory in chunks of 500 fs, and make this division every 1 fs, in other words, "moving chunks" of 500 fs:
 
-<!--- ![runn_avg](https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png&s=200)
---> 
-
 <img src="https://user-images.githubusercontent.com/18029016/132384960-822230b9-b8cf-48ed-ace2-92621f800b97.png" width="20%" height="20%">
 
-<!---  replace ![image](https://your-image-url.type) with <img src="https://your-image-url.type" width="50%" height="50%">
--->
-
 The script `scatter_and_run_average_4.py` uses all the aforementioned `{molecule_formula}.count.txt` files and plots the running average concentration of each molecule, something like this:
-
-
-<!---  
-[composition_and_running_av_E_6.small.pdf](https://github.com/DavidCdeB/ChemReact/files/7123357/composition_and_running_av_E_6.small.pdf)
--->
-
-<!---![p2](https://user-images.githubusercontent.com/18029016/132387621-cc9fc624-457b-476d-af15-968e95d945e7.png)
--->
 
 <img src="https://user-images.githubusercontent.com/18029016/132387621-cc9fc624-457b-476d-af15-968e95d945e7.png" width="70%" height="70%">
 
@@ -95,33 +81,31 @@ dict_colors = {
 
 ## 4 Detecting chemical reactions 
 
-By subtracting the matrix elements of the connectivity
-matrices involving two times <img src="https://render.githubusercontent.com/render/math?math=t_{1}"> and <img src="https://render.githubusercontent.com/render/math?math=t_{2}">, it is then possible to study chemical reactions.
+The script `detect_molecules_6_PII.py` will subtract the matrix elements of the connectivity
+matrices involving two times <img src="https://render.githubusercontent.com/render/math?math=t_{1}"> and <img src="https://render.githubusercontent.com/render/math?math=t_{2}">, and it will be then possible to study chemical reactions.
 Three cases can be found:
 
-<img src="https://user-images.githubusercontent.com/18029016/132515057-dc01ae7e-bdf3-4529-818d-8e6e37b54542.png" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/18029016/132515057-dc01ae7e-bdf3-4529-818d-8e6e37b54542.png" width="50%" height="50%">
 
 so that it is then possible to uniquely identify the indices of those
 atoms that form part of a reaction involving bond cleavage or
 formation.
 
-Two different scenarios can appear:
+Two different scenarios can occur:
 
-
-1) Scenario 1: 
-
-<!---  two indices break and later they are bonded again (_closed_ or _irreversible_ reactions)
--->
-
-It the indices involved in the cleavage/formation at a time t1 participate in the reverse 
+1) **Scenario 1**: If the indices involved in the cleavage/formation at a time t1 participate in the reverse 
 formation/cleavage reaction at any other given time t2, it has been named as a “closed
 reaction”, which is no other than a reversible reaction or a chemical equilibrium.
 
-1) Scenario 2:  If
+<img src="https://user-images.githubusercontent.com/18029016/132516852-6561faaa-fc62-4767-9095-b6a85021085a.png" width="50%" height="50%">
+
+
+1) **Scenario 2**:  If
 otherwise, the situation has been classified as an “open
-reaction”, where broken/formed indices never form/break back
+reaction”, which is no other than a irreversible reaction, where broken/formed indices never form/break back
 again.
 
+<img src="https://user-images.githubusercontent.com/18029016/132516913-8060f53a-b12d-4b7c-9b5e-80ef89fa4742.png" width="50%" height="50%">
 
 It is also possible to access the information on how much time two atoms remain bonded until they break or vicecersa. In other words, we can access the information about the kietics of the reactions and the lifetime of the intermediate (or product) species.
 
