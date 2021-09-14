@@ -4,13 +4,29 @@ The workflow of codes in this repository allow for the identification of species
 
 [1] Carrasco-Busturia, David et al., "Ab initio Molecular Dynamics Investigations of the Speciation and Reactivity of Deep Eutectic Electrolytes in Aluminum Batteries", ChemSusChem 2021, 14, **2034**
 
+# Table of Contents
+
+1. [Input files](#example)
+2. [Speciation: detecting molecules at each time step](#example2)
+
+    2.1 [System specific warning](#example2-1)
+
+3. [Running averages](#example3)
+
+    3.1 [System specific warning](#example3-1)
+
+4. [Detecting chemical reactions](#example4)
+
+6. [Postporcessing](#example5)
+
+<a name="example"></a>
 ## 1. Input files
 
 The most important input file you need to run these codes is the ab initio or classical molecular dynamics trayectory. For the sake of convenience, it is generally better to input the trajectory file as generated with [ase's "convert" command line option](https://wiki.fysik.dtu.dk/ase/cmdline.html). For instance, given a set of output files containing different ionic steps, this command line option works in the most intuitive way: 
 
 `ase convert OUTCAR_1 OUTCAR_2 OUTCAR_3 trajectory.traj`
 
-
+<a name="example2"></a>
 ## 2. Speciation: detecting molecules at each time step
 
 The script `detect_molecules_6.py` will take that trajectory file and will count the number of molecules found at each time step. This results in the generation of files of the type:
@@ -25,7 +41,7 @@ The speciation is based on the construction of a connectivity matrix, which afte
 
 <img src="https://user-images.githubusercontent.com/18029016/132507269-43e0870e-bac9-4c73-bf6a-5338c370693c.png" width="70%" height="70%">
 
-
+<a name="example2-1"></a>
 ### 2.1 System specific warning: 
 
 a) Make sure to modify the radius criteria for each atom for the definition of bonds:
@@ -42,7 +58,7 @@ b) Also this part of the code ensures no Al-Al or Cl-Cl bonds are formed (you ma
                 mat[i, j] = 0
                 mat[j, i] = 0
 ```
-
+<a name="example3"></a>
 ## 3. Running averages
 
 Plotting the _type_ and _number_ of molecules found at each fs time step is very confusing. 
@@ -54,6 +70,7 @@ The script `scatter_and_run_average_4.py` uses all the aforementioned `{molecule
 
 <img src="https://user-images.githubusercontent.com/18029016/132387621-cc9fc624-457b-476d-af15-968e95d945e7.png" width="70%" height="70%">
 
+<a name="example3-1"></a>
 ### 3.1 System specific warning: 
 
 Make sure you adapt the numeric-formula-to-chemical-formula conversion:
@@ -78,7 +95,7 @@ dict_colors = {
         'C2H8Al5Cl15N4O2'     :  'crimson',
 }
 ```
-
+<a name="example4"></a>
 ## 4 Detecting chemical reactions 
 
 The script `detect_molecules_6_PII.py` will subtract the matrix elements of the connectivity
@@ -109,8 +126,8 @@ again.
 
 It is also possible to access the information on how much time two atoms remain bonded until they break or vicecersa. In other words, we can access the information about the kietics of the reactions and the lifetime of the intermediate (or product) species.
 
-
-## Postporcessing
+<a name="example5"></a>
+## 5. Postporcessing
 
 It is also possible to exploit the scripts `parsing_closed_clean.py` and `parsing_open_clean.py` (`detect_molecules_6_PII.py` calls them by default) which generate clear and nice \*tex tables summarizing the reactions, like the following:
 
